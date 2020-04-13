@@ -93,7 +93,7 @@ void sort_array( unsigned char * pArray, char arraySize);
 /**
  * @brief:  printing an array
  *
- * @param:  pArray,    a pointer to a sorted array containing data [char*]
+ * @param:  pArray,    a pointer to an array containing data [char*]
  * @param:  ArraySize, the number of array elements [char]
  *
  * @return: void / None
@@ -114,4 +114,3 @@ void print_statistics( unsigned char * pArray, char arraySize);
 
 
 #endif /* __STATS_H__ */
-

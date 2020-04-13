@@ -46,22 +46,24 @@ void sort_array( unsigned char * pArray, char arraySize){
 
 void print_array(unsigned char * pArray, char arraySize){
   #ifdef VERBOSE
-  PRINTF("Sorted data:\n");
+  PRINTF("data:\n");
   for(int i = 0; i < arraySize;){
     for (int j = 0; j < 5; j++, i++) {
       PRINTF("\t%u\t", pArray[i]);
     }
     PRINTF("\n");
   }
-  #endif
+  #endif /* VERBOSE */
 }
 
 void print_statistics( unsigned char * pArray, char arraySize){
+  #ifdef VERBOSE
   PRINTF("\n");
   PRINTF("Mean  :\t%d\n", find_mean(pArray, arraySize));
   PRINTF("Median:\t%d\n", find_median(pArray, arraySize));
   PRINTF("Max   :\t%d\n", find_max(pArray, arraySize));
   PRINTF("Min   :\t%d\n", find_min(pArray, arraySize));
+  #endif /* VERBOSE */
 }
 
 unsigned char find_mean( unsigned char * pArray, char arraySize){
