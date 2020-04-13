@@ -14,8 +14,9 @@
 #define LENGTH 5          // number of elements of src (or dst)
 #define OVRLAP 3          // number of elements overlapped by src and dst
 #define VALUE  21         // used in test_memset
+
 int8_t course1(){
-  return test_memset();
+  return test_reverse();
 }
 
 int8_t test_memmove1(){
@@ -142,6 +143,23 @@ int8_t test_memset(){
   // check if data setting is properly done.
   for(int i = 0; i<LENGTH; i++){
     if(src_data[i] != 0) return -1;           // my_memzero is not working properly
+  }
+
+  return 0 ;                                      // all is well
+}
+
+int8_t test_reverse(){
+  uint8_t src_data[LENGTH] = {1, 2, 3, 4, 5};          // init with known values
+  uint8_t rvrs_src_data[LENGTH] = {5, 4, 3, 2, 1};     // reversed
+
+  // reversing src_data
+  if (my_reverse(src_data, LENGTH) == NULL){
+    return -1;                                        // my_reverse failed internally
+  }
+
+  // check if data reversing is properly done. compare src_data to rvrs_src_data
+  for(int i = 0; i<LENGTH; i++){
+    if(src_data[i] != rvrs_src_data[i]) return -1;     // my_memcopy is not working properly
   }
 
   return 0 ;                                      // all is well
