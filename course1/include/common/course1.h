@@ -38,5 +38,6 @@ int8_t test_memmove1();
 int8_t test_memmove2();
 int8_t test_memmove3();
 int8_t test_memcopy();
+int8_t test_memset();
 
 #endif /* __COURSE1_H__ */

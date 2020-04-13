@@ -13,9 +13,9 @@
 // if you change any of LENGTH or OVRLAP, make sure you change array initialization values
 #define LENGTH 5          // number of elements of src (or dst)
 #define OVRLAP 3          // number of elements overlapped by src and dst
-
+#define VALUE  21         // used in test_memset
 int8_t course1(){
-  return test_memcopy();
+  return test_memset();
 }
 
 int8_t test_memmove1(){
@@ -115,6 +115,33 @@ int8_t test_memcopy(){
   // check if data copying is properly done. compare dst_data to src_data
   for(int i = 0; i<LENGTH; i++){
     if(src_data[i] != dst_data[i]) return -1;     // my_memcopy is not working properly
+  }
+
+  return 0 ;                                      // all is well
+}
+
+int8_t test_memset(){
+  // create a data block but don't initialize
+  uint8_t src_data[LENGTH];                       // no init [garbage]
+
+  // setting src_data to VALUE
+  if (my_memset(src_data, LENGTH, VALUE) == NULL){
+    return -1;                                    // my_memset failed internally
+  }
+
+  // check if data setting is properly done.
+  for(int i = 0; i<LENGTH; i++){
+    if(src_data[i] != VALUE) return -1;           // my_memset is not working properly
+  }
+
+  // setting src_data to zero
+  if (my_memzero(src_data, LENGTH) == NULL){
+    return -1;                                    // my_memzero failed internally
+  }
+
+  // check if data setting is properly done.
+  for(int i = 0; i<LENGTH; i++){
+    if(src_data[i] != 0) return -1;           // my_memzero is not working properly
   }
 
   return 0 ;                                      // all is well
