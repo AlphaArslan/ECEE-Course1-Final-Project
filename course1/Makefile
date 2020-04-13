@@ -64,7 +64,7 @@ endif
 CPPS = $(SOURCES:.c=.i)
 ASMS = $(SOURCES:.c=.asm)
 OBJS = $(SOURCES:.c=.o)
-TARGET = c1m2
+TARGET = c1
 
 # build targets
 %.i : %.c
