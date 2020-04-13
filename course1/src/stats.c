@@ -63,13 +63,15 @@ void sort_array( unsigned char * pArray, char arraySize){
 }
 
 void print_array(unsigned char * pArray, char arraySize){
-  printf("Sorted data:\n");
+  #ifdef VERBOSE
+  PRINTF("Sorted data:\n");
   for(int i = 0; i < arraySize;){
     for (int j = 0; j < 5; j++, i++) {
-      printf("\t%u\t", pArray[i]);
+      PRINTF("\t%u\t", pArray[i]);
     }
-    printf("\n");
+    PRINTF("\n");
   }
+  #endif
 }
 
 void print_statistics( unsigned char * pArray, char arraySize){
@@ -99,4 +101,3 @@ unsigned char find_max( unsigned char * pArray, char arraySize){
 unsigned char find_min( unsigned char * pArray, char arraySize){
   return pArray[arraySize-1];
 }
-
