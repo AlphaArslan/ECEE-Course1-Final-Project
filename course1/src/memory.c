@@ -2,10 +2,10 @@
  * Copyright (C) 2017 by Alex Fosdick - University of Colorado
  *
  * Redistribution, modification or use of this software in source or binary
- * forms is permitted as long as the files maintain this copyright. Users are 
+ * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
  * software. Alex Fosdick and the University of Colorado are not liable for any
- * misuse of this material. 
+ * misuse of this material.
  *
  *****************************************************************************/
 /**
@@ -48,3 +48,24 @@ void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
 }
 
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length){
+  // creating a temporary place to hold data
+  uint8_t * p_temp = (uint8_t*) malloc(length*sizeof(uint8_t));
+  // check if we successfully allocated memory
+  if(p_temp == NULL) return NULL;               // indicating failure
+  // copy data from src to temp
+  my_memcopy(src, p_temp, length);
+  // copy data from temp to dst
+  my_memcopy(p_temp, dst, length);
+  // free the allocated temp memory
+  free(p_temp);
+  return dst;
+
+}
+
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length){
+  for(int i = 0; i < length; i++){
+    *(dst + i) = *(src + i);
+  }
+  return dst;
+}
