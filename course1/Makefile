@@ -2,10 +2,10 @@
 # Copyright (C) 2017 by Alex Fosdick - University of Colorado
 #
 # Redistribution, modification or use of this software in source or binary
-# forms is permitted as long as the files maintain this copyright. Users are 
+# forms is permitted as long as the files maintain this copyright. Users are
 # permitted to modify this and use it to learn about the field of embedded
 # software. Alex Fosdick and the University of Colorado are not liable for any
-# misuse of this material. 
+# misuse of this material.
 #
 #*****************************************************************************
 
@@ -15,7 +15,7 @@
 #		%.asm : assembly output of c-program implementation files and the final output executable
 #		%.o   : object file for all c-source files
 # For to PLATFORMs :
-#		HOST  : native compilation for linux 
+#		HOST  : native compilation for linux
 #		MSP432: cross compilation for ARM architecture target
 #
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
@@ -43,9 +43,9 @@ ifeq ($(PLATFORM),HOST)
 	CC = 		gcc
 	CFLAGS = 	-g -O0 -std=c99 -Wall -Werror -DHOST $(INCLUDES)
 	#excluding MSP$#@ source files
-	SOURCES := $(filter-out interrupts_msp432p401r_gcc.c	, $(SOURCES))
-	SOURCES := $(filter-out startup_msp432p401r_gcc.c	, $(SOURCES))
-	SOURCES := $(filter-out system_msp432p401r.c		, $(SOURCES))
+	SOURCES := $(filter-out src/interrupts_msp432p401r_gcc.c	, $(SOURCES))
+	SOURCES := $(filter-out src/startup_msp432p401r_gcc.c	, $(SOURCES))
+	SOURCES := $(filter-out src/system_msp432p401r.c		, $(SOURCES))
 else
 	# for MSP432
 	# Architectures Specific Flags
@@ -93,4 +93,3 @@ $(TARGET).out: $(OBJS)
 .PHONY: clean
 clean:
 	rm -f $(CPPS) $(ASMS) $(OBJS) $(TARGET).out $(TARGET).map
-
