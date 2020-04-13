@@ -35,5 +35,6 @@ int8_t course1();
  *                  -1 if failed
  */
 int8_t test_memmove1();
+int8_t test_memmove2();
 
 #endif /* __COURSE1_H__ */
