@@ -41,7 +41,7 @@ ifeq ($(PLATFORM),HOST)
 	# for HOST
 	# Compiler Flags and Defines
 	CC = 		gcc
-	CFLAGS = 	-g -O0 -std=c99 -Wall -Werror -DHOST $(INCLUDES)
+	CFLAGS = 	-g -O0 -std=c99 -Wall -Werror -DHOST $(INCLUDES) -DCOURSE1
 	#excluding MSP$#@ source files
 	SOURCES := $(filter-out src/interrupts_msp432p401r_gcc.c	, $(SOURCES))
 	SOURCES := $(filter-out src/startup_msp432p401r_gcc.c	, $(SOURCES))
@@ -57,7 +57,7 @@ else
 	CC = 		arm-none-eabi-gcc
 	LD =		arm-none-eabi-ld
 	LDFLAGS = 	-Wl,-Map=$(TARGET).map -T $(LINKER_FILE)
-	CFLAGS = 	-mcpu=$(CPU) -m$(ARCH) -march=armv7e-m -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS) -g -O0 -std=c99 -Wall -Werror -DMSP432 $(INCLUDES)
+	CFLAGS = 	-mcpu=$(CPU) -m$(ARCH) -march=armv7e-m -mfloat-abi=hard -mfpu=fpv4-sp-d16 --specs=$(SPECS) -g -O0 -std=c99 -Wall -Werror -DMSP432 $(INCLUDES) -DCOURSE1
 endif
 
 
