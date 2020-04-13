@@ -21,8 +21,10 @@
  Platform - HOST
 ******************************************************************************/
 #elif defined (HOST)
-#include <stdint.h>
+#include <stdint.h>       // intX_t, uintX_t
 #include <stdio.h>
+#include <stdlib.h>       // malloc, free
+
 #define PRINTF(...) printf(__VA_ARGS__)
 /******************************************************************************
  Platform - Unsupported
