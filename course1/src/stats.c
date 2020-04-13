@@ -75,11 +75,11 @@ void print_array(unsigned char * pArray, char arraySize){
 }
 
 void print_statistics( unsigned char * pArray, char arraySize){
-  printf("\n");
-  printf("Mean  :\t%d\n", find_mean(pArray, arraySize));
-  printf("Median:\t%d\n", find_median(pArray, arraySize));
-  printf("Max   :\t%d\n", find_max(pArray, arraySize));
-  printf("Min   :\t%d\n", find_min(pArray, arraySize));
+  PRINTF("\n");
+  PRINTF("Mean  :\t%d\n", find_mean(pArray, arraySize));
+  PRINTF("Median:\t%d\n", find_median(pArray, arraySize));
+  PRINTF("Max   :\t%d\n", find_max(pArray, arraySize));
+  PRINTF("Min   :\t%d\n", find_min(pArray, arraySize));
 }
 
 unsigned char find_mean( unsigned char * pArray, char arraySize){
