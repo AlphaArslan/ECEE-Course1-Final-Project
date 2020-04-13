@@ -80,3 +80,28 @@ uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value){
 uint8_t * my_memzero(uint8_t * src, size_t length){
   return my_memset(src, length, 0);
 }
+
+uint8_t * my_reverse(uint8_t * src, size_t length){
+  // creating a temporary place to hold data
+  uint8_t * p_temp = (uint8_t*) malloc(length*sizeof(uint8_t));
+  // check if we successfully allocated memory
+  if(p_temp == NULL) return NULL;               // indicating failure
+  // copy souce into temporary space
+  my_memcopy(src, p_temp, length);
+  // reverse elements
+  for(int i = 0; i < length; i++){
+    *(src + i) = *(p_temp + length - i -1);
+  }
+  // free the allocated temp memory
+  free(p_temp);
+
+  return src;
+}
+
+int32_t * reserve_words(size_t length){
+  return (uint32_t*) malloc(length*sizeof(uint32_t));
+}
+
+void free_words(int32_t * src){
+  free(src);
+}
