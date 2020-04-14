@@ -27,6 +27,9 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
+/***********************************************************
+ Function Definitions
+***********************************************************/
 
 void sort_array( unsigned char * pArray, char arraySize){
   unsigned char temp;

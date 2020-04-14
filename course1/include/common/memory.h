@@ -140,22 +140,6 @@ uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
 uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
 
 /**
- * @brief Sets a block of Data to a value
- *
- * Given a pointer to a uint8_t data block source address, the
- * size of the block, this will set all data elements to the
- * desired uint8_t value
- *
- * @param src       Pointer to data black
- * @param length    number of elements in the data block
- * @param value     uint8_t value to be written in all elements
- *
- * @return uint8_t* Pointer to data black
- *                  or Null pointer if failed
- */
-uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
-
-/**
  * @brief Sets a block of Data to a Zero
  *
  * Given a pointer to a uint8_t data block source address, the
