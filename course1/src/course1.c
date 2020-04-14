@@ -21,7 +21,7 @@
  Function Definitions
 ***********************************************************/
 int8_t course1(){
-  return test_data2();
+  return test_data1();
 }
 
 int8_t test_data1(){
@@ -29,10 +29,11 @@ int8_t test_data1(){
   // change num and base to get different test combinations
   int32_t num = -100;
   uint32_t base = 16;
+  int32_t result = my_itoa(num, buffer, base);
   PRINTF("num: %d ,base %d\n", num, base);
-  PRINTF("string length: %d\n", my_itoa(num, buffer, base));
+  PRINTF("string length: %d\n", result);
   PRINTF("buffer: %s\n", buffer);
-  return 0;
+  return (result - result);       // same as return 0 , but solves Variable-Unused warning
 }
 
 int8_t test_data2(){
