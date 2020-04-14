@@ -16,6 +16,9 @@
 ******************************************************************************/
 #if defined (MSP432)
 #include "msp432p401r.h"
+#include <stdint.h>       // intX_t, uintX_t
+#include <stdlib.h>       // malloc, free
+#include "math.h"         // pow() used in data.c
 #define PRINTF(...)
 /******************************************************************************
  Platform - HOST
