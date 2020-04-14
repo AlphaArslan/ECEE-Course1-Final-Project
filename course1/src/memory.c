@@ -97,7 +97,7 @@ uint8_t * my_reverse(uint8_t * src, size_t length){
 }
 
 int32_t * reserve_words(size_t length){
-  return (uint32_t*) malloc(length*sizeof(uint32_t));
+  return (int32_t*) malloc(length*sizeof(uint32_t));
 }
 
 void free_words(int32_t * src){
