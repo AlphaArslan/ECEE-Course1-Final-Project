@@ -42,6 +42,8 @@ ifeq ($(PLATFORM),HOST)
 	# Compiler Flags and Defines
 	CC = 		gcc
 	CFLAGS = 	-g -O0 -std=c99 -Wall -Werror -DHOST $(INCLUDES) -DCOURSE1 -DVERBOSE
+	# link math lib
+	LDFLAGS=	-lm
 	#excluding MSP$#@ source files
 	SOURCES := $(filter-out src/interrupts_msp432p401r_gcc.c	, $(SOURCES))
 	SOURCES := $(filter-out src/startup_msp432p401r_gcc.c	, $(SOURCES))
