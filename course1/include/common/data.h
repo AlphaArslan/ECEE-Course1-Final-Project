@@ -37,7 +37,7 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base);
  * to base of 16 (Hexadecimal).
  *
  * @param   ptr   uint8_t* pointer ASCII string to be converted
- * @param  digits uint8_t number of digits in the ASCII string
+ * @param  digits uint8_t number of digits in the ASCII string. sign is not counted.
  * @param   base  uint32_t number base. Ex, 2 (Binary), 10 (decimal)
  *
  * @return int32_t   integer value after conversion

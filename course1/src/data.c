@@ -46,5 +46,21 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base){
 }
 
 int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base){
+  // check on the sign
+  if(*ptr != 45){                                 // positive
+    int32_t num = 0;                                    // we store the number here
+    uint8_t index = 0;                                  // to loop over digits
+    for(; index <= digits-1; index++){
+      if(*(ptr + index) >= 65){                         // A, B, ....
+        num += (*(ptr + index) - 65 +10) * (int32_t)POW(base, digits-index-1);
+      }else{                                            // 0, 1, ..., 9
+        num += (*(ptr + index) - 48) * (int32_t)POW(base, digits-index-1);
+      }
+    }
+    PRINTF("%d\n", num);
+    return num;
+  }else{                                          // negative
+    return my_atoi(ptr+1, digits, base) * -1;
+  }
   return 0;
 }
