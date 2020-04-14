@@ -26,19 +26,92 @@
 int8_t course1();
 
 /**
- * @brief Tests non-overlapped memmove
+ * @brief Test integer to ASCII conversion
  *
- * This function gives non-overlapping source and destination of
- * a data block to memmove() function [memory.h]
+ * This function sends positive and negative integers
+ * (for different bases) to my_itoa() [data.h] and print
+ * the results.
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
+int8_t test_data1();
+
+/**
+ * @brief Test ASCII to integer conversion
+ *
+ * This function sends strings of positive and negative integers
+ * (for different bases) to my_atoi() [data.h] and compare
+ * the results to an expected value.
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
+int8_t test_data2();
+
+/**
+ * @brief Sends non-overlapped data blocks to my_memmove()
+ *
+ * This function gives non-overlapping source and destination
+ * data block to my_memmove() function [memory.h]
  *
  * @return int8_t   0  if successfull
  *                  -1 if failed
  */
 int8_t test_memmove1();
+
+/**
+ * @brief Sends overlapped data blocks to my_memmove()
+ *
+ * overlapping happins at the end of destination and start of
+ * the source data blocks
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
 int8_t test_memmove2();
+
+/**
+ * @brief Sends overlapped data blocks to my_memmove()
+ *
+ * overlapping happins at the start of destination and end of
+ * the source data blocks
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
 int8_t test_memmove3();
+
+/**
+ * @brief Sends non-overlapped data blocks to my_memcopy()
+ *
+ * This function gives non-overlapping source and destination
+ * data block to my_memcopy() function [memory.h]
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
 int8_t test_memcopy();
+
+/**
+ * @brief Sends a value to be written in a data block
+ *
+ * This function tests my_memset() and my_memzero()
+ * functions [memory.h]
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
 int8_t test_memset();
+
+/**
+ * @brief Sends a data block to be reversed
+ *
+ * This function tests my_reverse() function [memory.h]
+ *
+ * @return int8_t   0  if successfull
+ *                  -1 if failed
+ */
 int8_t test_reverse();
 
 #endif /* __COURSE1_H__ */
