@@ -17,7 +17,7 @@
 ***********************************************************/
 uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base){
   // check on the sign
-  if(data > 0){                                   // positive
+  if(data >= 0){                                   // positive
     uint8_t index = 0;                                  // indicating the memory location
     uint8_t gen_digit;                                  // generated digit .. holds temp data in calculation
     // find out how many digits

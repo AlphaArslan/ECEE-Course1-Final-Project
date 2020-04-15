@@ -51,11 +51,9 @@ void sort_array( unsigned char * pArray, char arraySize){
 void print_array(unsigned char * pArray, char arraySize){
   #ifdef VERBOSE
   PRINTF("data:\n");
-  for(int i = 0; i < arraySize;){
-    for (int j = 0; j < 5; j++, i++) {
-      PRINTF("\t%u\t", pArray[i]);
-    }
-    PRINTF("\n");
+  for(int i = 0; i < arraySize; i++){
+    PRINTF("\t%u\t", pArray[i]);
+    if(i%5 == 0) PRINTF("\n");
   }
   #endif /* VERBOSE */
 }
