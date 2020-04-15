@@ -19,10 +19,15 @@
  * representaion (ex, "1234"). It supports signed numbers and up
  * to base of 16 (Hexadecimal).
  *
+ *  integer     base     ------>    printed string
+ *    5           2                   "101"
+ *    10          16                  "A"
+ *    154         10                  "154"
+ *
  * @param   data  int32_t number to be converted
  * @param   ptr   uint8_t* pointer to memory space where ASCII
  *                string gets stored
- * @param   base  uint32_t number base. Ex, 2 (Binary), 10 (decimal)
+ * @param   base  uint32_t base of the printed number.
  *
  * @return uint8_t   number of characters (including NULL character)
  *                    -1 if failed
@@ -36,9 +41,14 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base);
  * integer (ex, 1234). It supports signed numbers and up
  * to base of 16 (Hexadecimal).
  *
- * @param   ptr   uint8_t* pointer ASCII string to be converted
- * @param  digits uint8_t number of digits in the ASCII string. sign is not counted.
- * @param   base  uint32_t number base. Ex, 2 (Binary), 10 (decimal)
+ *  printed string     base     ------>    integer
+ *      "101"           2                      5
+ *       "A"           16                     10
+ *      "154"          10                    154
+ *
+ * @param   ptr     uint8_t* pointer ASCII string to be converted
+ * @param   digits  uint8_t number of digits in the ASCII string. sign is not counted.
+ * @param   base    uint32_t base of the given number
  *
  * @return int32_t   integer value after conversion
  */

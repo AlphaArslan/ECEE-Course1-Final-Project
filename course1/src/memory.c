@@ -22,9 +22,9 @@
  */
 #include "memory.h"
 
-/***********************************************************
- Function Definitions
-***********************************************************/
+/********************************************************/
+/*********** functions provided by the course ***********/
+/********************************************************/
 void set_value(char * ptr, unsigned int index, char value){
   ptr[index] = value;
 }
@@ -47,6 +47,10 @@ void set_all(char * ptr, char value, unsigned int size){
 void clear_all(char * ptr, unsigned int size){
   set_all(ptr, 0, size);
 }
+
+/********************************************************/
+/********** functions written by Mohamed Said ***********/
+/********************************************************/
 
 uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length){
   // creating a temporary place to hold data

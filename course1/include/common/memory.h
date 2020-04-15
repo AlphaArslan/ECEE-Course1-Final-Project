@@ -25,6 +25,10 @@
 #define __MEMORY_H__
 #include "platform.h"
 
+/********************************************************/
+/*********** functions provided by the course ***********/
+/********************************************************/
+
 /**
  * @brief Sets a value of a data array
  *
@@ -93,16 +97,21 @@ void set_all(char * ptr, char value, unsigned int size);
  */
 void clear_all(char * ptr, unsigned int size);
 
+/********************************************************/
+/********** functions written by Mohamed Said ***********/
+/********************************************************/
 /**
  * @brief Moves a block of Data
  *
  * Given a pointer to a uint8_t data block source address, the
  * size of the block, and the destination address, this will move
  * the data block to the new destination memory location
+ * This functioncan can deal with overlapped data blocks
  *
  * @param src       Pointer to data black
  * @param dst       Pointer to new data black locaiton
  * @param length    number of elements in the data block
+ *
  * @return uint8_t* Pointer to new data black locaiton
  *                  or Null pointer if failed
  */
@@ -114,10 +123,12 @@ uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
  * Given a pointer to a uint8_t data block source address, the
  * size of the block, and the destination address, this will copy
  * the data block to the new destination memory location
+ * source and destination have to be exclusive (non-overlapped)
  *
  * @param src       Pointer to data black
  * @param dst       Pointer to new data black locaiton
  * @param length    number of elements in the data block
+ *
  * @return uint8_t* Pointer to new data black locaiton
  *                  or Null pointer if failed
  */

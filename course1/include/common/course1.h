@@ -17,11 +17,11 @@
  * @brief Calls different test functions
  *
  * This function is called by main(), and on its turn calls other
- * test functions one by one
+ * test functions one at a time.
  *
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t course1();
 
@@ -32,8 +32,8 @@ int8_t course1();
  * (for different bases) to my_itoa() [data.h] and print
  * the results.
  *
- * @return int8_t   0  if successfull
- *                  -1 if failed
+ * @return int8_t   0
+ *
  */
 int8_t test_data1();
 
@@ -45,7 +45,7 @@ int8_t test_data1();
  * the results to an expected value.
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_data2();
 
@@ -56,7 +56,7 @@ int8_t test_data2();
  * data block to my_memmove() function [memory.h]
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_memmove1();
 
@@ -67,7 +67,7 @@ int8_t test_memmove1();
  * the source data blocks
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_memmove2();
 
@@ -78,7 +78,7 @@ int8_t test_memmove2();
  * the source data blocks
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_memmove3();
 
@@ -89,28 +89,30 @@ int8_t test_memmove3();
  * data block to my_memcopy() function [memory.h]
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_memcopy();
 
 /**
- * @brief Sends a value to be written in a data block
+ * @brief Sends a value to be written in all elements of
+ * a data block
  *
  * This function tests my_memset() and my_memzero()
  * functions [memory.h]
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_memset();
 
 /**
- * @brief Sends a data block to be reversed
+ * @brief Sends a data block for the elements to be reversed
+ * in order
  *
  * This function tests my_reverse() function [memory.h]
  *
  * @return int8_t   0  if successfull
- *                  -1 if failed
+ *                 -1  if failed
  */
 int8_t test_reverse();
 

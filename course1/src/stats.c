@@ -9,13 +9,14 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name>
- * @brief <Add Brief Description Here >
+ * @file stats.c
+ * @brief performing statistical operations
  *
- * <Add Extended Description Here>
+ * perfoming statistical operations on an array (i.e. finding mean, median, max and min values),
+ *          as well as sorting and printing the array.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Mohamed Said
+ * @date 5 April, 2020
  *
  */
 

@@ -15,32 +15,35 @@
 #define LENGTH 5          // number of elements of src (or dst)
 #define OVRLAP 3          // number of elements overlapped by src and dst
 #define VALUE  21         // used in test_memset
-#define BUFFER 20         // used in test_data1و test_data2
+#define BUFFER 20         // used in test_data1, test_data2
 
 /***********************************************************
  Function Definitions
 ***********************************************************/
 int8_t course1(){
-  return test_data1();
+  return test_data1();        // replace test_data1 with any other test function
 }
 
 int8_t test_data1(){
+  // buffer is where we store the result string
   uint8_t buffer[BUFFER];
   // change num and base to get different test combinations
   int32_t num = -100;
   uint32_t base = 16;
-  int32_t result = my_itoa(num, buffer, base);
+  my_itoa(num, buffer, base);                 // this line is to avoid variable-unused warning
+                                              // when building for MSP432 target
   PRINTF("num: %d ,base %d\n", num, base);
-  PRINTF("string length: %d\n", result);
+  PRINTF("string length: %d\n", my_itoa(num, buffer, base));
   PRINTF("buffer: %s\n", buffer);
-  return (result - result);       // same as return 0 , but solves Variable-Unused warning
+  return 0;
 }
 
 int8_t test_data2(){
-  // change str, base and digits to get different test combinations
-  char * str = "-1A";
-  uint32_t base = 16;
-  uint8_t digits = 2;                                   // the sign is not counted
+  // change str, base, digits and expected to get different test combinations
+  char * str       = "-1A" ;
+  uint32_t base    =  16 ;
+  uint8_t digits   =  2 ;                     // the sign is not counted
+  int32_t expected = -26 ;
   if(my_atoi((uint8_t*)str, digits, base) == -26){
     return 0;
   }else{
