@@ -108,11 +108,11 @@ void clear_all(char * ptr, unsigned int size);
  * the data block to the new destination memory location
  * This functioncan can deal with overlapped data blocks
  *
- * @param src       Pointer to data black
- * @param dst       Pointer to new data black locaiton
+ * @param src       Pointer to data block
+ * @param dst       Pointer to new data block locaiton
  * @param length    number of elements in the data block
  *
- * @return uint8_t* Pointer to new data black locaiton
+ * @return uint8_t* Pointer to new data block locaiton
  *                  or Null pointer if failed
  */
 uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
@@ -125,11 +125,11 @@ uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
  * the data block to the new destination memory location
  * source and destination have to be exclusive (non-overlapped)
  *
- * @param src       Pointer to data black
- * @param dst       Pointer to new data black locaiton
+ * @param src       Pointer to data block
+ * @param dst       Pointer to new data block locaiton
  * @param length    number of elements in the data block
  *
- * @return uint8_t* Pointer to new data black locaiton
+ * @return uint8_t* Pointer to new data block locaiton
  *                  or Null pointer if failed
  */
 uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
@@ -141,11 +141,11 @@ uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
  * size of the block, this will set all data elements to the
  * desired uint8_t value
  *
- * @param src       Pointer to data black
+ * @param src       Pointer to data block
  * @param length    number of elements in the data block
  * @param value     uint8_t value to be written in all elements
  *
- * @return uint8_t* Pointer to data black
+ * @return uint8_t* Pointer to data block
  *                  or Null pointer if failed
  */
 uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
@@ -156,10 +156,10 @@ uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
  * Given a pointer to a uint8_t data block source address, the
  * size of the block, this will set all data elements to Zero
  *
- * @param src       Pointer to data black
+ * @param src       Pointer to data block
  * @param length    number of elements in the data block
  *
- * @return uint8_t* Pointer to data black
+ * @return uint8_t* Pointer to data block
  *                  or Null pointer if failed
  */
 uint8_t * my_memzero(uint8_t * src, size_t length);
@@ -171,10 +171,10 @@ uint8_t * my_memzero(uint8_t * src, size_t length);
  * size of the block, this will reverse the order of all of
  * the elements
  *
- * @param src       Pointer to data black
+ * @param src       Pointer to data block
  * @param length    number of elements in the data block
  *
- * @return uint8_t* Pointer to data black
+ * @return uint8_t* Pointer to data block
  *                  or Null pointer if failed
  */
 uint8_t * my_reverse(uint8_t * src, size_t length);
@@ -188,7 +188,7 @@ uint8_t * my_reverse(uint8_t * src, size_t length);
  *
  * @param length    number of elements
  *
- * @return int32_t* Pointer to reserved memory black
+ * @return int32_t* Pointer to reserved memory block
  *                  or Null pointer if failed
  */
 int32_t * reserve_words(size_t length);
